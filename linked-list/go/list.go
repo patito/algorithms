@@ -68,12 +68,13 @@ func (l *LinkedList) Insert(data interface{}, pos int) {
 			if pos == counter {
 				previous.next = node
 				node.next = current
+				l.count++
 				return
 			}
 			previous = current
 			current = current.next
+			counter++
 		}
-		l.count++
 	}
 }
 
@@ -136,20 +137,19 @@ func (l *LinkedList) Pop(pos int) {
 			}
 			previous = current
 			current = current.next
+			counter++
 		}
 	}
 }
 
+/*
 func main() {
 	list := New()
 
-	list.Append("tesudo")
-	list.Preppend("titao")
-	list.Preppend("lindao")
-	list.Insert("data", 0)
+	list.Insert("end", 3)
+	list.Insert("init", -1)
+	list.Insert("middle", 1)
 	list.Print()
 	fmt.Println(list.Length())
-	list.Remove("tesudo")
-	fmt.Println(list.Length())
-	list.Print()
-}
+
+}*/
